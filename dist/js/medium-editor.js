@@ -6729,6 +6729,10 @@ MediumEditor.extensions = {};
     }
 
     function handleKeyup(event) {
+        if (event.isComposing || event.keyCode === 229) {
+           return;
+        }
+
         var node = MediumEditor.selection.getSelectionStart(this.options.ownerDocument),
             tagName;
 
